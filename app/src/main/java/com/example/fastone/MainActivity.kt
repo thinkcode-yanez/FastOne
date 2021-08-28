@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.getAllRounds()
 
 
-      //  Toast.makeText(this,"Fecha ${date}",Toast.LENGTH_SHORT).show()
-      //  initRecyclerView()
-
 
         binding.rvMain.apply {
             layoutManager = LinearLayoutManager(applicationContext)
