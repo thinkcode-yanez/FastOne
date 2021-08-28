@@ -35,12 +35,17 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.rvMain.apply {
-            layoutManager = LinearLayoutManager(applicationContext)
+            layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.HORIZONTAL,false)
         }
 
         viewModel._response.observe(this, Observer {
 
-            binding.rvMain.adapter = RoundsAdapter(it)
+            roundsAdapter= RoundsAdapter(it)
+
+            binding.rvMain.adapter = roundsAdapter
+
+
+
 
         })
 
