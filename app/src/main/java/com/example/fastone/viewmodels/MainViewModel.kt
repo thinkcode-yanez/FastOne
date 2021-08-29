@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fastone.models.Race
+import com.example.fastone.models.RaceX
+import com.example.fastone.models.Result
 import com.example.fastone.repositories.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -22,6 +24,8 @@ class MainViewModel
 
 
     val _response = MutableLiveData<List<Race>>()
+    val _responseWinners=MutableLiveData<List<Result>>()
+    val _responseDataCircuit=MutableLiveData<RaceX>()
 
 
     fun getAllRounds() = viewModelScope.launch {
@@ -64,6 +68,32 @@ class MainViewModel
 
             } else {
                 Log.d("Test", "error al cargar datos")
+            }
+        }
+    }
+
+    fun getLastResults()= viewModelScope.launch {
+
+
+        repo.getLastResults().let {
+
+            val data=it.body()
+
+            if(it.isSuccessful){
+                val _rootLastResults=data!!.MRData.RaceTable.Races[0]
+
+                Log.d("Results","First Place ${_rootLastResults.Results[0].Driver.givenName} " +
+                        _rootLastResults.Results[0].Driver.familyName
+                )
+                Log.d("Results","Second Place ${_rootLastResults.Results[1].Driver.givenName} " +
+                        _rootLastResults.Results[1].Driver.familyName
+                )
+                Log.d("Results","Third Place ${_rootLastResults.Results[2].Driver.givenName} " +
+                        _rootLastResults.Results[2].Driver.familyName
+                )
+                _responseWinners.postValue(_rootLastResults.Results)//Guardamos la lista de ganadores
+                _responseDataCircuit.postValue(_rootLastResults)
+
             }
         }
     }
