@@ -11,4 +11,8 @@ class Repository
 
     suspend fun getLastResults()=api.getLastResults()
 
+    suspend fun getDriverStandings()=api.getDriverStandings()
+
+    suspend fun getConstructorsStandings()=api.getConstructorStandings()
+
 }

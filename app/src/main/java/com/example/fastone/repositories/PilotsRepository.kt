@@ -64,7 +64,7 @@ class PilotsRepository {
             "perez"->perez
             "raikkonen"->raikkonen
             "ricciardo"->ricciardo
-            "russel"->russell
+            "russell"->russell
             "mick_schumacher"->mick_schumacher
             "stroll"->stroll
             "tsunoda"->tsunoda

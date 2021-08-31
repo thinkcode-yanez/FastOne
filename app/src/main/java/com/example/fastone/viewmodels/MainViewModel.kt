@@ -43,6 +43,7 @@ class MainViewModel
                 Log.d("Test", "Total de carreras ${_rootRace.size}")
                 Log.d("Test", "Total de races $races")
 
+
                // _rootRace[0].Circuit.circuitId
               //  _response.postValue(_rootRace)
 
@@ -97,6 +98,8 @@ class MainViewModel
             }
         }
     }
+
+
 
 
 }
