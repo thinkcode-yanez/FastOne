@@ -13,19 +13,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastOne">
         <activity
-            android:name=".DriverStandings"
-            android:exported="true" />
-        <activity android:name=".ConstructorStandings"
-            android:exported="true"/>
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DriverStandings"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ConstructorStandings"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
         </activity>
     </application>
 

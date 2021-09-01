@@ -75,7 +75,7 @@ class RoundsAdapter(private val dataSet: List<Race>?) :
                 "yas_marina"->Glide.with(context).load(circuit.yasmarina).into(binding.ivCircuit)
                 else-> Glide.with(context).load("null").into(binding.ivCircuit)
             }
-
+            binding.tvDate.text=item.date
             binding.tvRaceName.text = item.raceName
             binding.tvRound.text = item.round
 

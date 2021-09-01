@@ -13,6 +13,8 @@ import com.example.fastone.databinding.ItemRaceBinding
 import com.example.fastone.models.DriverStanding
 import com.example.fastone.models.Race
 import com.example.fastone.repositories.CircuitsRepository
+import com.example.fastone.repositories.PilotsRepository
+import com.example.fastone.repositories.TeamsRepository
 
 
 class DriversAdapter(private val dataSet: List<DriverStanding>?) :
@@ -53,7 +55,13 @@ class DriversAdapter(private val dataSet: List<DriverStanding>?) :
 
 
         fun enlazarItem(item: DriverStanding) {
-            val circuit= CircuitsRepository()
+
+
+            val pilot= PilotsRepository()
+            val logo=pilot.getPilot(item.Driver.driverId)
+            // val name="${item.Driver.givenName} ${item.Driver.familyName}"
+            Glide.with(context).load(logo).into(binding.ivPilot)
+           // val circuit= CircuitsRepository()
 
             val name="${item.Driver.givenName} ${item.Driver.familyName}"
 

@@ -59,7 +59,7 @@ class PilotsRepository {
             "giovinazzi"->giovinazzi
             "latifi"->latifi
             "leclerc"->leclerc
-            "maxepin"->mazepin
+            "mazepin"->mazepin
             "norris"->norris
             "perez"->perez
             "raikkonen"->raikkonen
