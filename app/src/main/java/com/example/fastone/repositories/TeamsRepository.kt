@@ -1,5 +1,6 @@
 package com.example.fastone.repositories
 
+//la base de datos no tiene disponible imagenes es por eso que tomamos los links de las miniaturas de formula1.com
 class TeamsRepository {
 
     val mercedes="https://www.formula1.com/content/dam/fom-website/teams/2021/mercedes-logo.png.transform/2col/image.png"

@@ -2,6 +2,7 @@ package com.example.fastone.repositories
 
 import com.bumptech.glide.Glide
 
+//la base de datos no tiene disponible imagenes es por eso que tomamos los links de las miniaturas de formula1.com
 class PilotsRepository {
 
     val ocon =

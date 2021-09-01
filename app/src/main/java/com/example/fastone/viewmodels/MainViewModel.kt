@@ -26,6 +26,7 @@ class MainViewModel
     val _response = MutableLiveData<List<Race>>()
     val _responseWinners=MutableLiveData<List<Result>>()
     val _responseDataCircuit=MutableLiveData<RaceX>()
+    val _responseDate=MutableLiveData<String>()
 
 
     fun getAllRounds() = viewModelScope.launch {
@@ -56,6 +57,7 @@ class MainViewModel
                         Log.i("app", "Date1 is before Date2")
                         val newList = _rootRace.subList(race.round.toInt() - 1, 23)
                         _response.postValue(newList)
+                        _responseDate.postValue("${race.date} 00:00")
                         break
                     }
                     if (currentDate == race.date) {

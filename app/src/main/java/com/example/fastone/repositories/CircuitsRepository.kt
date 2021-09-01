@@ -2,7 +2,7 @@ package com.example.fastone.repositories
 
 import javax.inject.Inject
 
-
+//la base de datos no tiene disponible imagenes es por eso que tomamos los links d elas miniaturas de formula1.com
 class CircuitsRepository{
     val bahrain="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/8col/image.png"
     val imola="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Emilia%20Romagna%20carbon.png.transform/8col/image.png"
