@@ -3,8 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/item_race.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/activity_constructor_standings.xml" value="0.142578125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/activity_splash_screen.xml" value="0.153125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/activity_standings.xml" value="0.153125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/constructor_standings.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/driver_standings.xml" value="0.153125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/fragment_constructor_standings.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/fragment_driver_standings.xml" value="0.16" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/item_constructor.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/item_driver.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/item_race.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/FastOne/app/src/main/res/layout/nav_host_fragment.xml" value="0.76875" />
       </map>
     </option>
   </component>

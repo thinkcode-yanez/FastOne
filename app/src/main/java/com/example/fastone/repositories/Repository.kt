@@ -9,4 +9,10 @@ class Repository
 
     suspend fun getAllRounds()=api.getAllRounds()
 
+    suspend fun getLastResults()=api.getLastResults()
+
+    suspend fun getDriverStandings()=api.getDriverStandings()
+
+    suspend fun getConstructorsStandings()=api.getConstructorStandings()
+
 }

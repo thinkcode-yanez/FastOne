@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fastone.models.Race
+import com.example.fastone.models.RaceX
+import com.example.fastone.models.Result
 import com.example.fastone.repositories.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -22,6 +24,9 @@ class MainViewModel
 
 
     val _response = MutableLiveData<List<Race>>()
+    val _responseWinners=MutableLiveData<List<Result>>()
+    val _responseDataCircuit=MutableLiveData<RaceX>()
+    val _responseDate=MutableLiveData<String>()
 
 
     fun getAllRounds() = viewModelScope.launch {
@@ -39,6 +44,10 @@ class MainViewModel
                 Log.d("Test", "Total de carreras ${_rootRace.size}")
                 Log.d("Test", "Total de races $races")
 
+
+               // _rootRace[0].Circuit.circuitId
+              //  _response.postValue(_rootRace)
+
                 for (race in _rootRace) {
 
                     if (currentDate > race.date) {
@@ -48,6 +57,7 @@ class MainViewModel
                         Log.i("app", "Date1 is before Date2")
                         val newList = _rootRace.subList(race.round.toInt() - 1, 23)
                         _response.postValue(newList)
+                        _responseDate.postValue("${race.date} 00:00")
                         break
                     }
                     if (currentDate == race.date) {
@@ -64,6 +74,34 @@ class MainViewModel
             }
         }
     }
+
+    fun getLastResults()= viewModelScope.launch {
+
+
+        repo.getLastResults().let {
+
+            val data=it.body()
+
+            if(it.isSuccessful){
+                val _rootLastResults=data!!.MRData.RaceTable.Races[0]
+
+                Log.d("Results","First Place ${_rootLastResults.Results[0].Driver.givenName} " +
+                        _rootLastResults.Results[0].Driver.familyName
+                )
+                Log.d("Results","Second Place ${_rootLastResults.Results[1].Driver.givenName} " +
+                        _rootLastResults.Results[1].Driver.familyName
+                )
+                Log.d("Results","Third Place ${_rootLastResults.Results[2].Driver.givenName} " +
+                        _rootLastResults.Results[2].Driver.familyName
+                )
+                _responseWinners.postValue(_rootLastResults.Results)//Guardamos la lista de ganadores
+                _responseDataCircuit.postValue(_rootLastResults)
+
+            }
+        }
+    }
+
+
 
 
 }
