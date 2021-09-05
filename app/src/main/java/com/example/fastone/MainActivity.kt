@@ -91,21 +91,22 @@ class MainActivity : AppCompatActivity() {
             val starDate=Calendar.getInstance() //Fecha Actual
             val endDate=Calendar.getInstance() //Instanciamos la fecha de proxima carrera
             val date = it
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm", Locale.ENGLISH)
-            val localDate = LocalDateTime.parse(date, formatter)//Convertimos el string en fecha
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd",Locale.getDefault())
+            val localDate = LocalDate.parse(date, formatter)//Convertimos el string en fecha
 
-            endDate.set(localDate.year,localDate.monthValue-1,localDate.dayOfMonth,0,0)//Seteamos la fecha
+
+
+            endDate.set(localDate.year,localDate.monthValue-1,localDate.dayOfMonth,6,0)//Seteamos la fecha
             val starDateInMillis=starDate.timeInMillis //Get date start in millis // get date end in millis
             val endDateInMillis=endDate.timeInMillis
 
             val totalMillis=endDateInMillis-starDateInMillis
 
+
+
             //CONTADOR HASTA LA SIGUIENTE CARRERA
             object : CountDownTimer(totalMillis,1000) {
                 val time = StringBuilder();
-                override fun onFinish() {
-                    binding.tvContador.setText("Its Race Day!!")
-                }
 
                 override fun onTick(millisUntilFinished: Long) {
                     var millisUntilFinished = millisUntilFinished
@@ -118,7 +119,13 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     time.append(formatElapsedTime(Math.round(millisUntilFinished / 1000.0)))
-                    binding.tvContador.setText(time.toString())
+                    binding.tvContador.text=(time.toString())
+
+                }
+                override fun onFinish() {
+                    binding.tvContador.setText("Its Race Day!!")
+                    binding.tvUntil.setText("")
+
                 }
             }.start()
 

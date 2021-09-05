@@ -57,13 +57,14 @@ class MainViewModel
                         Log.i("app", "Date1 is before Date2")
                         val newList = _rootRace.subList(race.round.toInt() - 1, 23)
                         _response.postValue(newList)
-                        _responseDate.postValue("${race.date} 00:00")
+                        _responseDate.postValue("${race.date}")//agregar 00:00
                         break
                     }
                     if (currentDate == race.date) {
                         Log.i("app", "Date1 is equal to Date2")
                         val newList = _rootRace.subList(race.round.toInt() - 1, 23)
                         _response.postValue(newList)
+                        _responseDate.postValue("${race.date}")
                         break
                     }
                 }
