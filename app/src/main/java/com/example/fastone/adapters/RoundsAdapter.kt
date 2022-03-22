@@ -73,6 +73,9 @@ class RoundsAdapter(private val dataSet: List<Race>?) :
                 "albert_park"->Glide.with(context).load(circuit.australia).into(binding.ivCircuit)
                 "jeddah"->Glide.with(context).load(circuit.saudiarabia).into(binding.ivCircuit)
                 "yas_marina"->Glide.with(context).load(circuit.yasmarina).into(binding.ivCircuit)
+                "miami"->Glide.with(context).load(circuit.miami).into(binding.ivCircuit)
+                "villeneuve"->Glide.with(context).load(circuit.canada).into(binding.ivCircuit)
+                "marina_bay"->Glide.with(context).load(circuit.singa).into(binding.ivCircuit)
                 else-> Glide.with(context).load("null").into(binding.ivCircuit)
             }
             binding.tvDate.text=item.date

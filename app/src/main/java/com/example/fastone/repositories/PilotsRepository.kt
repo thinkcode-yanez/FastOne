@@ -45,12 +45,14 @@ class PilotsRepository {
         "https://www.formula1.com/content/dam/fom-website/drivers/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01.png.transform/2col/image.png"
     val vettel =
         "https://www.formula1.com/content/dam/fom-website/drivers/S/SEBVET01_Sebastian_Vettel/sebvet01.png.transform/2col/image.png"
-
-
+    val albon=
+        "https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col/image.png"
+    val zhou="https://www.formula1.com/content/dam/fom-website/drivers/G/GUAZHO01_Guanyu_Zhou/guazho01.png.transform/2col/image.png"
     fun getPilot(id: String): String =
 
         when (id) {
             "ocon" -> ocon
+            "zhou" ->zhou
             "hamilton" -> hamilton
             "sainz" -> sainz
             "max_verstappen"->max_verstappen
@@ -70,6 +72,7 @@ class PilotsRepository {
             "stroll"->stroll
             "tsunoda"->tsunoda
             "vettel"->vettel
+            "albon"->albon
 
             else -> "null"
 
